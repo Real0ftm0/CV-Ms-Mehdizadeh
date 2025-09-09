@@ -138,7 +138,7 @@ p, li { color: var(--muted); font-size: 16px; }
   color: var(--muted);
 }
 
-/* Modal Gallery with custom background */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -154,25 +154,24 @@ p, li { color: var(--muted); font-size: 16px; }
   align-items: center;
   justify-content: center;
 
-  overflow: auto; /* اجازه اسکرول وقتی عکس بزرگ‌تر بود */
+  overflow: auto; 
 }
 .modal::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75); /* بک‌گراند نیمه‌شفاف روی تصویر */
+  background: rgba(0,0,0,0.75); 
 }
 .modal-content {
   position: relative;
   z-index: 2;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 
-  /* جدید */
-  max-width: 90%;   /* فاصله از چپ و راست (5% + 5%) */
-  max-height: 85%;  /* بالا و پایین */
-  margin: auto;     /* سنتر کردن */
+  max-width: 90%;  
+  max-height: 85%;  
+  margin: auto;    
   display: block;
-  object-fit: contain; /* حفظ تناسب عکس */
+  object-fit: contain; 
 }
 #caption {
   margin: 10px auto;
@@ -210,7 +209,6 @@ p, li { color: var(--muted); font-size: 16px; }
 .next { right: 0; }
 .prev:hover, .next:hover { color: var(--accent); }
 
-/* Helper class برای سنتر کردن محتوای کم */
 .flex-center {
   display: flex;
   align-items: center;
@@ -219,7 +217,7 @@ p, li { color: var(--muted); font-size: 16px; }
 }
 /* ---------- About page ---------- */
 .about-layout {
-  grid-template-columns: 2fr 1fr; /* سمت چپ بزرگ‌تر، راست باریک‌تر */
+  grid-template-columns: 2fr 1fr; 
   gap: 40px;
   align-items: start;
 }
@@ -248,7 +246,6 @@ p, li { color: var(--muted); font-size: 16px; }
   gap: 20px;
 }
 
-/* برای موبایل */
 @media (max-width: 900px) {
   .about-layout {
     grid-template-columns: 1fr;

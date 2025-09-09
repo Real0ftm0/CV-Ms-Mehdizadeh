@@ -14,7 +14,7 @@ if (navToggle) {
 const yearSpan = document.getElementById("year");
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-// ---------- Modal gallery logic (فقط در صفحه Projects) ----------
+// ---------- Modal logic ----------
 if (document.body.classList.contains("projects-page")) {
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
@@ -27,22 +27,19 @@ if (document.body.classList.contains("projects-page")) {
   let currentIndex = 0;
   
 
-  // همیشه ابتدای صفحه مودال بسته باشه
   if (modal) modal.style.display = "none";
 
-  // کلیک روی کارت پروژه
   document.querySelectorAll(".project-card").forEach(card => {
     card.addEventListener("click", (e) => {
-      e.preventDefault(); // جلوگیری از پرش
+      e.preventDefault(); 
 
       const images = card.dataset.images ? card.dataset.images.split(",") : [];
-      const bg = card.dataset.bg; // تصویر بک‌گراند آلبوم
-
+      const bg = card.dataset.bg;
       if (images.length > 0) {
         currentAlbum = images;
         currentIndex = 0;
 
-        modal.style.display = "flex"; // فقط اینجا باز بشه
+        modal.style.display = "flex"; 
         if (bg) modal.style.backgroundImage = `url(${bg})`;
         modalImg.src = currentAlbum[currentIndex];
         captionText.innerHTML = card.querySelector("h3")?.innerText || "";
@@ -50,7 +47,6 @@ if (document.body.classList.contains("projects-page")) {
     });
   });
 
-  // نمایش تصویر خاص
   function showImage(index) {
     if (currentAlbum.length === 0) return;
     if (index < 0) index = currentAlbum.length - 1;
@@ -64,6 +60,5 @@ if (document.body.classList.contains("projects-page")) {
   if (nextBtn) nextBtn.onclick = () => showImage(currentIndex + 1);
   if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
 
-  // بستن با کلیک بیرون
   window.onclick = e => { if (e.target === modal) modal.style.display = "none"; }
 }
