@@ -1,19 +1,51 @@
-<header class="site-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Mina Mehdizadeh</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
     <div class="container nav">
       <a href="index.html" class="brand">Mina Mehdizadeh</a>
-  
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-  
-      <nav class="nav-links" role="navigation">
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="awards.html">Awards</a>
-        <a href="press.html">Press</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
-  
+
+  <!-- Contact Content -->
+  <main class="section flex-center">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>If you would like to get in touch, please use the form below or contact me directly:</p>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:mina.mehdizadeh72@gmail.com">mina.mehdizadeh72@gmail.com</a></p>
+        <p><strong>Phone:</strong> +98 913 492 9113</p>
+        <p><strong>Location:</strong> Kerman, Iran</p>
+      </div>
+
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Mina Mehdizadeh — All Rights Reserved</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

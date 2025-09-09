@@ -11,8 +11,12 @@
   --radius: 16px;
 }
 
+html, body { height: 100%; }
 html { scroll-behavior: smooth; }
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
@@ -20,6 +24,7 @@ body {
 }
 
 /* Layout */
+main { flex: 1; }
 .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
 .section { padding: 80px 0; }
 h1, h2, h3 { line-height: 1.2; margin-bottom: 12px; }
@@ -60,7 +65,12 @@ p, li { color: var(--muted); font-size: 16px; }
 .hero h1 { color: var(--text); }
 .hero p { max-width: 700px; margin: 10px auto 20px; color: var(--muted); }
 .cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.accent-bg { background: var(--accent-light); }
+.accent-bg {
+  background: linear-gradient(rgb(255 255 255 / 69%), rgb(255 255 255 / 52%)),
+              url("assets/Home.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
 /* About */
 .two-col { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; }
@@ -69,7 +79,12 @@ p, li { color: var(--muted); font-size: 16px; }
 .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; background: #fff; }
 
 /* Footer */
-.site-footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; background: #fff; }
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  text-align: center;
+  background: #fff;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -123,30 +138,49 @@ p, li { color: var(--muted); font-size: 16px; }
   color: var(--muted);
 }
 
-/* Modal Gallery */
+/* Modal Gallery with custom background */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0; top: 0;
+  inset: 0;
   width: 100%; height: 100%;
-  overflow: hidden;
-  background-color: rgba(0,0,0,0.9);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: auto; /* اجازه اسکرول وقتی عکس بزرگ‌تر بود */
+}
+.modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75); /* بک‌گراند نیمه‌شفاف روی تصویر */
 }
 .modal-content {
-  display: block;
-  margin: auto;
-  padding-top: 30px;
-  max-width: 80%;
-  max-height: 80%;
-  /*border-radius: var(--radius);*/
+  position: relative;
+  z-index: 2;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+  /* جدید */
+  max-width: 90%;   /* فاصله از چپ و راست (5% + 5%) */
+  max-height: 85%;  /* بالا و پایین */
+  margin: auto;     /* سنتر کردن */
+  display: block;
+  object-fit: contain; /* حفظ تناسب عکس */
 }
 #caption {
   margin: 10px auto;
   text-align: center;
   color: #f1f1f1;
   font-size: 16px;
+  position: relative;
+  z-index: 2;
 }
 .close {
   position: absolute;
@@ -156,6 +190,7 @@ p, li { color: var(--muted); font-size: 16px; }
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  z-index: 2;
 }
 .prev, .next {
   cursor: pointer;
@@ -169,7 +204,53 @@ p, li { color: var(--muted); font-size: 16px; }
   font-size: 32px;
   user-select: none;
   transition: 0.3s;
+  z-index: 2;
 }
 .prev { left: 0; }
 .next { right: 0; }
 .prev:hover, .next:hover { color: var(--accent); }
+
+/* Helper class برای سنتر کردن محتوای کم */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* ---------- About page ---------- */
+.about-layout {
+  grid-template-columns: 2fr 1fr; /* سمت چپ بزرگ‌تر، راست باریک‌تر */
+  gap: 40px;
+  align-items: start;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+}
+
+.about-text {
+  line-height: 1.7;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* برای موبایل */
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
