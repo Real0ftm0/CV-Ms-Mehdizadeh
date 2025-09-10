@@ -5,7 +5,7 @@
   --text: #2f2f2f;        /* خاکستری تیره */
   --muted: #6d6d6d;       /* خاکستری ملایم */
   --border: #e3dfd7;      /* بژ روشن */
-  --accent: #9bbf9b;      /* سبز پاستلی */
+  --accent: #8dbe8d;      /* سبز پاستلی */
   --accent-light: #dbe7db;/* سبز خیلی روشن */
   --container: 1200px;
   --radius: 16px;
@@ -139,6 +139,7 @@ p, li { color: var(--muted); font-size: 16px; }
 }
 
 /* Modal */
+/* ==== Modal ==== */
 .modal {
   display: none;
   position: fixed;
@@ -162,25 +163,6 @@ p, li { color: var(--muted); font-size: 16px; }
   inset: 0;
   background: rgba(0,0,0,0.75); 
 }
-.modal-content {
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-
-  max-width: 90%;  
-  max-height: 85%;  
-  margin: auto;    
-  display: block;
-  object-fit: contain; 
-}
-#caption {
-  margin: 10px auto;
-  text-align: center;
-  color: #f1f1f1;
-  font-size: 16px;
-  position: relative;
-  z-index: 2;
-}
 .close {
   position: absolute;
   top: 20px;
@@ -189,8 +171,57 @@ p, li { color: var(--muted); font-size: 16px; }
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
+
+/* ==== Inner modal */
+.modal-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 20px;
+  max-width: 90%;
+  max-height: 85%;
+  margin: auto;
+  /* background: #111; */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.modal-text {
+  flex: 1;
+  color: #f1f1f1;
+  overflow-y: auto;
+}
+
+.modal-text h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--accent, #ffcc00);
+}
+
+.modal-text p {
+  font-size: 16px;
+  color: #caffd1;
+  line-height: 1.6;
+}
+
+.modal-image {
+  flex: 1.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ==== Prev / Next buttons ==== */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -203,18 +234,12 @@ p, li { color: var(--muted); font-size: 16px; }
   font-size: 32px;
   user-select: none;
   transition: 0.3s;
-  z-index: 2;
+  z-index: 3;
 }
 .prev { left: 0; }
 .next { right: 0; }
-.prev:hover, .next:hover { color: var(--accent); }
+.prev:hover, .next:hover { color: var(--accent, #ffcc00); }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
 /* ---------- About page ---------- */
 .about-layout {
   grid-template-columns: 2fr 1fr; 
