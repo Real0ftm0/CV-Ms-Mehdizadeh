@@ -1,12 +1,11 @@
-/* Reset + Variables */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #faf9f6;          /* nude روشن */
-  --text: #2f2f2f;        /* خاکستری تیره */
-  --muted: #6d6d6d;       /* خاکستری ملایم */
-  --border: #e3dfd7;      /* بژ روشن */
-  --accent: #8dbe8d;      /* سبز پاستلی */
-  --accent-light: #dbe7db;/* سبز خیلی روشن */
+  --bg: #faf9f6;          
+  --text: #2f2f2f;       
+  --muted: #6d6d6d;       
+  --border: #e3dfd7;      
+  --accent: #8dbe8d;      
+  --accent-light: #dbe7db;
   --container: 1200px;
   --radius: 16px;
 }
@@ -139,7 +138,6 @@ p, li { color: var(--muted); font-size: 16px; }
 }
 
 /* Modal */
-/* ==== Modal ==== */
 .modal {
   display: none;
   position: fixed;
@@ -221,7 +219,7 @@ p, li { color: var(--muted); font-size: 16px; }
   border-radius: 8px;
 }
 
-/* ==== Prev / Next buttons ==== */
+/* == Prev / Next buttons == */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -350,13 +348,13 @@ p, li { color: var(--muted); font-size: 16px; }
   }
 }
 .award-modal {
-  display: none; /* اولش پنهان باشه */
+  display: none; 
   position: fixed;
   inset: 0;
   z-index: 2000;
   background: rgba(0,0,0,0.85);
 
-  align-items: center; /* flex فقط وقتی نمایش داده بشه */
+  align-items: center; 
   justify-content: center;
 }
 

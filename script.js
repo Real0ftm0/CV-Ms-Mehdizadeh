@@ -43,8 +43,6 @@ if (document.body.classList.contains("projects-page")) {
         if (bg) modal.style.backgroundImage = `url(${bg})`; 
         modalImg.src = currentAlbum[currentIndex]; 
 
-        // متن
-        // جدید
         modalTitle.innerText = card.dataset.title || "";
         modalDesc.innerText = card.dataset.desc || "";
 
@@ -74,7 +72,7 @@ const awardClose = document.querySelector(".award-close");
 
 document.querySelectorAll("img.open-award").forEach(img => {
   img.addEventListener("click", () => {
-  awardModal.style.display = "flex"; // اینجا flex فعال بشه
+  awardModal.style.display = "flex";
   awardModalImg.src = img.src;
 });
 
