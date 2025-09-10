@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Awards — Mina Mehdizadeh</title>
+  <title>Workshop & Awards — Mina Mehdizadeh</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body >
   <!-- Header -->
   <header class="site-header">
     <div class="container nav">
@@ -18,7 +18,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="awards.html" class="active">Awards</a>
+        <a href="awards.html" class="active">Workshop & Awards</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -27,47 +27,80 @@
   <!-- Awards Content -->
 <section class="section accent-bg">
   <div class="container">
-    <h2>Awards</h2>
+    <h2>Workshop & Awards</h2>
     <div class="awards-list">
 
-      <!-- Award 1 -->
+      <!-- Volleyball Award 2017 -->
       <div class="award-card">
         <div class="award-year">2017</div>
         <div class="award-info">
           <h3>Gold Medal</h3>
           <p>Kerman Ramazan Cup Volleyball Tournament</p>
           <div class="award-images">
-            <img src="assets/vl1.jpg" alt="Award 1 photo">
-            <img src="assets/vl2.jpg" alt="Award 1 photo">
-            <img src="assets/vl3.jpg" alt="Award 1 photo">
-            <img src="assets/vl4.jpg" alt="Award 1 photo">
+            <img src="assets/vl1.jpg" alt="Volleyball Award photo 1 "class="open-award">
+            <img src="assets/vl2.jpg" alt="Volleyball Award photo 2">
+            <img src="assets/vl3.jpg" alt="Volleyball Award photo 3">
+            <img src="assets/vl4.jpg" alt="Volleyball Award photo 4">
           </div>
         </div>
       </div>
 
-      <!-- Award 2 -->
+      <!-- Workshop 2013 -->
       <div class="award-card">
-        <div class="award-year">2022</div>
+        <div class="award-year">2013</div>
         <div class="award-info">
-          <h3>Excellence in Design</h3>
-          <p>Interior Architecture</p>
+          <h3>Islamic Architecture Workshop</h3>
+          <p>Kerman House of Quality: Mr Mohammad Pour Afghan & Mr Mohammd Shetafat Esfahani (Part A) — 8 hours training, Seminar</p>
           <div class="award-images">
-            <img src="assets/award2-1.jpg" alt="Award 2 photo">
-            <img src="assets/award2-2.jpg" alt="Award 2 photo">
-            <img src="assets/award2-3.jpg" alt="Award 2 photo">
+            <img src="assets/workshop1.jpg" alt="Workshop 2013 photo" class="open-award">
           </div>
         </div>
       </div>
 
-      <!-- Award 3 -->
+      <!-- Workshop 2014 -->
       <div class="award-card">
-        <div class="award-year">2020</div>
+        <div class="award-year">2014</div>
         <div class="award-info">
-          <h3>Student Competition Winner</h3>
-          <p>Urban Planning</p>
+          <h3>Islamic Architecture Workshop</h3>
+          <p>Kerman University Jihad: Mr Hoseen Pormosa (Part B) — 8 hours training, Seminar</p>
           <div class="award-images">
-            <img src="assets/award3-1.jpg" alt="Award 3 photo">
-            <img src="assets/award3-2.jpg" alt="Award 3 photo">
+            <img src="assets/workshop2.jpg" alt="Workshop 2014 photo" class="open-award">
+          </div>
+        </div>
+      </div>
+
+      <!-- Khaje Khezr Competition -->
+      <div class="award-card">
+        <div class="award-year">2014</div>
+        <div class="award-info">
+          <h3>Khaje Khezr Quarter Competition</h3>
+          <p>Dr. Khosrow Bozorgi & Dr. Mamak Nasiri Nasab (Team Work)</p>
+          <div class="award-images">
+            <img src="assets/competition1.jpg" alt="Khaje Khezr Competition photo" class="open-award">
+          </div>
+        </div>
+      </div>
+
+      <!-- Autodesk 2D Competition -->
+      <div class="award-card">
+        <div class="award-year">2014</div>
+        <div class="award-info">
+          <h3>Autodesk 2D Competition</h3>
+          <p>Kerman University Jihad</p>
+          <div class="award-images">
+            <img src="assets/competition2.jpg" alt="Autodesk 2D photo" class="open-award">
+          </div>
+        </div>
+      </div>
+
+      <!-- Autodesk 3D Competition -->
+      <div class="award-card">
+        <div class="award-year">2014</div>
+        <div class="award-info">
+          <h3>Autodesk 3D Competition</h3>
+          <p>Kerman University Jihad</p>
+          <div class="award-images">
+            <img src="assets/competition3.jpg" alt="Autodesk 3D photo" class="open-award">
           </div>
         </div>
       </div>
@@ -76,6 +109,11 @@
   </div>
 </section>
 
+<!-- Award Modal -->
+  <div id="award-modal" class="award-modal">
+    <span class="award-close">&times;</span>
+    <img class="award-modal-content" id="award-modal-img">
+  </div>
   <footer class="site-footer">
     <div class="container">
       <small>© <span id="year"></span> Mina Mehdizadeh — All Rights Reserved</small>

@@ -62,3 +62,39 @@ if (document.body.classList.contains("projects-page")) {
 
   window.onclick = e => { if (e.target === modal) modal.style.display = "none"; }
 }
+document.querySelectorAll(".award-card").forEach(card => {
+  const mainImg = card.querySelector(".award-images img:first-child");
+  if (mainImg) {
+    mainImg.addEventListener("click", () => {
+      currentAlbum = [mainImg.src]; // فقط همین عکس
+      currentIndex = 0;
+
+      modal.style.display = "flex";
+      modal.style.backgroundImage = "none";
+      modalImg.src = currentAlbum[currentIndex];
+      captionText.innerHTML = card.querySelector("h3")?.innerText || "";
+    });
+  }
+});
+// ---------- Award Modal logic ----------
+const awardModal = document.getElementById("award-modal");
+const awardModalImg = document.getElementById("award-modal-img");
+const awardClose = document.querySelector(".award-close");
+
+document.querySelectorAll("img.open-award").forEach(img => {
+  img.addEventListener("click", () => {
+  awardModal.style.display = "flex"; // اینجا flex فعال بشه
+  awardModalImg.src = img.src;
+});
+
+});
+
+if (awardClose) {
+  awardClose.onclick = () => awardModal.style.display = "none";
+}
+
+window.addEventListener("click", e => {
+  if (e.target === awardModal) {
+    awardModal.style.display = "none";
+  }
+});
