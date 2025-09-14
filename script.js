@@ -1,4 +1,4 @@
-// ---------- Mobile menu toggle ----------
+// ---Mobile menu toggle ---
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -10,11 +10,11 @@ if (navToggle) {
   });
 }
 
-// ---------- Year in footer ----------
+// --- Year in footer ---
 const yearSpan = document.getElementById("year");
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-// ---------- Modal logic ----------
+// ---Modal logic---
 if (document.body.classList.contains("projects-page")) { 
   const modal = document.getElementById("modal"); 
   const modalImg = document.getElementById("modal-img"); 
@@ -65,7 +65,7 @@ if (document.body.classList.contains("projects-page")) {
   window.onclick = e => { if (e.target === modal) modal.style.display = "none"; } 
 }
 
-// ---------- Award Modal logic ----------
+//--- Award Modal logic---
 const awardModal = document.getElementById("award-modal");
 const awardModalImg = document.getElementById("award-modal-img");
 const awardClose = document.querySelector(".award-close");
