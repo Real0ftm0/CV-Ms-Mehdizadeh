@@ -87,3 +87,8 @@ window.addEventListener("click", e => {
     awardModal.style.display = "none";
   }
 });
+document.querySelectorAll('.teamwork-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.stopPropagation();
+  });
+});
